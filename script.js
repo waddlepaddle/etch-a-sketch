@@ -42,7 +42,7 @@ const button = document.querySelector("button");
 button.addEventListener("click", () => {
     let size = prompt("Enter no. of squares per side: (1-35)");
     
-    if (size == null || size == "" || size > 35) {
+    while (size == null || size == "" || size > 35) {
         alert("Please enter a number between 1-35 :)");
         size = prompt("Enter no. of squares per side: (1-35)");
     }
