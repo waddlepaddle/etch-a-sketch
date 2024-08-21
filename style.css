@@ -21,3 +21,12 @@ body {
     border: 2px solid rgb(255, 192, 203);
     box-sizing: border-box;
 }
+
+button {
+    font-weight: bold;
+    background-color: lightpink;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 1.5px #888888;
+    padding: 3px 20px;
+}

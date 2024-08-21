@@ -60,3 +60,11 @@ button.addEventListener("click", () => {
 
     createGrid(size);
 })
+
+button.addEventListener("mouseover", () => {
+    button.style.backgroundColor = '#888888';
+})
+
+button.addEventListener("mouseout", () => {
+    button.style.backgroundColor = 'lightpink';
+})
