@@ -40,7 +40,12 @@ document.addEventListener("mouseout", e => {
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
-    let size = prompt("Enter no. of squares per side: ")
+    let size = prompt("Enter no. of squares per side: (1-35)");
+    
+    if (size < 1 || size > 35) {
+        alert("Please enter a number between 1-35 :)");
+        size = prompt("Enter no. of squares per side: (1-35)");
+    }
 
     const gridBoxWidth = document.querySelector(".grid-box").offsetWidth;
 
@@ -50,7 +55,7 @@ button.addEventListener("click", () => {
         currentGrid[0].remove();
     }
 
-    const newContainerWidth = size * gridBoxWidth + 10;
+    const newContainerWidth = size * gridBoxWidth + 40;
     container.style.width = `${newContainerWidth}px`;
 
     createGrid(size);

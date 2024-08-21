@@ -9,15 +9,15 @@ body {
 
 #container {
     display: flex;
-    width: 500px;
+    width: 350px;
     gap: 1px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .grid-box {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     border: 2px solid rgb(255, 192, 203);
     box-sizing: border-box;
 }
