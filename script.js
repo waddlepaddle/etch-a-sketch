@@ -34,23 +34,21 @@ document.addEventListener("mouseout", e => {
     mouseoutAction(e);
 })
 
-const gridBox = document.querySelector(".grid-box");
-console.log(gridBox);
-
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
     let size = prompt("Enter no. of squares per side: ")
-    console.log(size);
+
+    const gridBoxWidth = document.querySelector(".grid-box").offsetWidth;
 
     const currentGrid = document.getElementsByClassName("grid-box");
-    console.log(currentGrid.length)
 
     while (currentGrid.length > 0) {
         currentGrid[0].remove();
     }
 
-    console.log(currentGrid.length)
+    const newContainerWidth = size * gridBoxWidth + 10;
+    container.style.width = `${newContainerWidth}px`;
 
     for (let i = 0; i < size * size; i++) {
         const gridBox = document.createElement("div");
@@ -58,8 +56,4 @@ button.addEventListener("click", () => {
     
         container.appendChild(gridBox);
     }
-
-    // const newGrid = document.getElementsByClassName("grid-box");
-    // console.log(newGrid);
-    
 })
