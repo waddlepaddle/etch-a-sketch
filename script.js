@@ -1,11 +1,14 @@
 const container = document.querySelector("#container");
 
-for (let i = 0; i < 16 * 16; i++) {
-    const gridBox = document.createElement("div");
-    gridBox.classList.add("grid-box");
-
-    container.appendChild(gridBox);
+function createGrid(size) {
+    for (let i = 0; i < size * size; i++) {
+        const gridBox = document.createElement("div");
+        gridBox.classList.add("grid-box");
+        container.appendChild(gridBox);
+    }
 }
+
+createGrid(16)
 
 function mouseoverAction(e) {
     let target = e.target;
@@ -50,10 +53,5 @@ button.addEventListener("click", () => {
     const newContainerWidth = size * gridBoxWidth + 10;
     container.style.width = `${newContainerWidth}px`;
 
-    for (let i = 0; i < size * size; i++) {
-        const gridBox = document.createElement("div");
-        gridBox.classList.add("grid-box");
-    
-        container.appendChild(gridBox);
-    }
+    createGrid(size);
 })
