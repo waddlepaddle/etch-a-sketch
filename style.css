@@ -1,0 +1,15 @@
+#container {
+    display: flex;
+    justify-content: space-between;
+    width: 1700px;
+    height: 1600px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.grid-box {
+    display: flex;
+    height: 90px;
+    width: 90px;
+    border: 5px solid rgb(255, 192, 203);
+}
