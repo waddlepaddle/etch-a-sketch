@@ -25,12 +25,12 @@ document.addEventListener("mouseover", e => {
     mouseoverAction(e);
 })
 
-const button = document.querySelector("button");
+const setGridSize = document.getElementById("set-grid-size");
 
-button.addEventListener("click", () => {
+setGridSize.addEventListener("click", () => {
     let size = prompt("Enter no. of squares per side: (1-35)");
     
-    while (size == null || size == "" || size > 35) {
+    while (size == null || size == "" || size > 35 || !Number.isInteger(+size)) {
         alert("Please enter a number between 1-35 :)");
         size = prompt("Enter no. of squares per side: (1-35)");
     }
@@ -49,10 +49,26 @@ button.addEventListener("click", () => {
     createGrid(size);
 })
 
-button.addEventListener("mouseover", () => {
-    button.style.backgroundColor = '#888888';
+const button = document.querySelectorAll("button");
+
+document.addEventListener("mouseover", (e) => {
+    if (e.target.nodeName == "BUTTON") {
+        e.target.style.backgroundColor = '#888888';
+    }
 })
 
-button.addEventListener("mouseout", () => {
-    button.style.backgroundColor = 'lightpink';
+document.addEventListener("mouseout", (e) => {
+    if (e.target.nodeName == "BUTTON") {
+        e.target.style.backgroundColor = 'lightpink';
+    }
+})
+
+const clearGrid = document.querySelector("#clear-grid");
+
+clearGrid.addEventListener("click", () => {
+    const gridBoxes = document.getElementsByClassName("grid-box");
+
+    for (let i = 0; i < gridBoxes.length; i++) {
+        gridBoxes[i].style.backgroundColor = '';
+    }
 })
