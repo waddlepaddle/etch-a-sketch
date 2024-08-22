@@ -21,20 +21,8 @@ function mouseoverAction(e) {
     }
 }
 
-function mouseoutAction(e) {
-    let target = e.target;
-
-    if (target.className == 'grid-box') {
-        target.style.backgroundColor = '';
-    }
-}
-
 document.addEventListener("mouseover", e => {
     mouseoverAction(e);
-})
-
-document.addEventListener("mouseout", e => {
-    mouseoutAction(e);
 })
 
 const button = document.querySelector("button");
