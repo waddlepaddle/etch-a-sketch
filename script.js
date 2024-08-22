@@ -49,8 +49,6 @@ setGridSize.addEventListener("click", () => {
     createGrid(size);
 })
 
-const button = document.querySelectorAll("button");
-
 document.addEventListener("mouseover", (e) => {
     if (e.target.nodeName == "BUTTON") {
         e.target.style.backgroundColor = '#888888';
