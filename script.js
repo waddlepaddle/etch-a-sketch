@@ -66,9 +66,9 @@ document.addEventListener("mouseout", (e) => {
 const clearGrid = document.querySelector("#clear-grid");
 
 clearGrid.addEventListener("click", () => {
-    const gridBoxes = document.getElementsByClassName("grid-box");
+    const gridBoxes = document.querySelectorAll(".grid-box");
 
-    for (let i = 0; i < gridBoxes.length; i++) {
-        gridBoxes[i].style.backgroundColor = '';
-    }
+    gridBoxes.forEach((box) => {
+        box.style.backgroundColor = '';
+    })
 })
